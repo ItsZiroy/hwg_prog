@@ -17,7 +17,7 @@
 */
 
 
-package Tools;  // (Version 2018 ff)
+package Prog1Tools;  // (Version 2018 ff)
 
 import java.io.*;
 import java.util.*;
