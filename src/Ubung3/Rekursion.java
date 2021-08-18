@@ -1,6 +1,6 @@
 package Ubung3;
 
-public class Reukursion {
+public class Rekursion {
     public static void main(String[] args) {
         int tries = 5;
         for (int i = 0; i <= tries; i++) {

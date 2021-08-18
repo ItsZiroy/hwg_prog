@@ -1,6 +1,6 @@
 package Ubung3;
 
-import Prog1Tools.IOTools;
+import Tools.IOTools;
 
 public class Wuerfelspiel {
 
@@ -36,7 +36,7 @@ public class Wuerfelspiel {
                 int gewuerfelteZahl = this.wuerfel();
 
                 this.wuerfe[i][j] = gewuerfelteZahl;
-                
+
                 temp += gewuerfelteZahl;
             }
 

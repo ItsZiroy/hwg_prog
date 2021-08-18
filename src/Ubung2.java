@@ -1,4 +1,4 @@
-import Prog1Tools.IOTools;
+import Tools.IOTools;
 
 public class Ubung2 {
 
