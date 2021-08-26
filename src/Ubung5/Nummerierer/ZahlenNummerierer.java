@@ -10,7 +10,7 @@ public class ZahlenNummerierer extends Nummerierer {
 
     @Override
     public String next() {
-        if (this.nummer < 20) {
+        if (this.available()) {
             return "" + ++nummer;
         }
         return "Keine nächste Nummer";
