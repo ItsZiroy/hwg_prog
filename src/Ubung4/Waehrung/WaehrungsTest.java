@@ -8,7 +8,7 @@ public class WaehrungsTest {
 
         System.out.println(euro.euroBetrag() + " Euro entspricht: " + euro.dollarBetrag());
         System.out.println(yen.waehrungsBetrag() + " Yen entspricht: " + yen.dollarBetrag());
-        System.out.println(pfund.waehrungsBetrag() + "Pfund entspricht: "+ pfund.dollarBetrag());
+        System.out.println(pfund.waehrungsBetrag() + " Pfund entspricht: "+ pfund.dollarBetrag());
 
     }
 }

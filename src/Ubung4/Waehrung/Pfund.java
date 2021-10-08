@@ -7,6 +7,7 @@ public class Pfund extends Euro {
     public Pfund(double wert) {
         super(wert / kurs);
     }
+
     public Pfund(Euro euro) {
         super(euro.euroBetrag());
     }

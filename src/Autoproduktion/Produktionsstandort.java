@@ -23,6 +23,7 @@ public class Produktionsstandort {
     public Kleinteil[] getProduzierteTeile() {
         return this.teile;
     }
+
     public void addProduziertesTeil(Kleinteil pKleinteil) {
         ProduktionsTeil[] newArray = new ProduktionsTeil[this.teile.length + 1];
         for (int i = 0; i < this.teile.length ; i++) {
@@ -32,26 +33,19 @@ public class Produktionsstandort {
 
         this.teile = newArray;
     }
-    public void addProduziertesTeilNeu(Kleinteil pKleinteil) {
-        ProduktionsTeil[] newArray = new ProduktionsTeil[this.teile.length +1];
-        System.arraycopy(this.teile, 0, newArray, 0, this.teile.length);
-        newArray[this.teile.length] = new ProduktionsTeil(pKleinteil);
-
-        this.teile = newArray;
-    }
 
     public String getProduktionsStandort() {
         return this.standort;
     }
 
-    public boolean wirdProduziert(Kleinteil pKleinteil) {
+    public boolean kannProduziertWerden(Kleinteil pKleinteil) {
         return findeTeil(pKleinteil) != null;
     }
 
-    public boolean kannProduzieren(Komponente pKomponente) {
+    public boolean kannProduktionStarten(Komponente pKomponente) {
         if(this.verfuegbareMitarbeiter < pKomponente.benoetigteMitarbeiter()) return false;
             for (Kleinteil teil: pKomponente.getKomponenten()) {
-                if(!this.wirdProduziert(teil)) return false;
+                if(!this.kannProduziertWerden(teil)) return false;
             }
 
         return true;
@@ -80,12 +74,21 @@ public class Produktionsstandort {
             throw new MangelndeMitarbeiterException(this.verfuegbareMitarbeiter - pKomponente.benoetigteMitarbeiter());
         }
     }
+    public boolean istInProduktion(Kleinteil pKleinteil) {
+        ProduktionsTeil gefundenesTeil = this.findeTeil(pKleinteil);
+        if(gefundenesTeil != null) {
+            return gefundenesTeil.istInProduktion();
+        }
+        return false;
+    }
 
     public void beendeProuktion(Kleinteil pKleinteil) {
         ProduktionsTeil teil = this.findeTeil(pKleinteil);
         if(teil != null) {
-            this.verfuegbareMitarbeiter += teil.getBenoetigteArbeiter();
-            teil.setInProduktion(false);
+            if(teil.istInProduktion()) {
+                this.verfuegbareMitarbeiter += teil.getBenoetigteArbeiter();
+                teil.setInProduktion(false);
+            }
         }
     }
 

@@ -18,8 +18,9 @@ public class Kleinteil implements Teil<Kleinteil> {
     public int getBenoetigteArbeiter() {
         return this.arbeiter;
     }
+
     public boolean istGleichesTeil(Kleinteil teil) {
-        return !this.name.equals(teil.name) && this.arbeiter == teil.getBenoetigteArbeiter();
+        return this.name.equals(teil.name) && this.arbeiter == teil.getBenoetigteArbeiter();
     }
 
 }

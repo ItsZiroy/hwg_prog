@@ -5,7 +5,7 @@ public class Ubung2 {
 
     public static void main(String[] args) {
 
-        // Ubung2.aufgabe20();
+        Ubung2.aufgabe20();
 
     }
 
