@@ -51,7 +51,7 @@ public class ArrayStackFixedLength<T> implements Stack<T> {
 
     @Override
     public void push(T object) throws StackException {
-        if(currentIndex + 1 == array.length) {
+        if(currentIndex + 1 == array.length || object == null) {
             throw new StackException();
         }
         this.currentIndex++;
