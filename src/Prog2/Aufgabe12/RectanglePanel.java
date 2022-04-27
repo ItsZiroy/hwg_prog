@@ -2,8 +2,6 @@ package Prog2.Aufgabe12;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Vector;
@@ -14,6 +12,7 @@ public class RectanglePanel extends JPanel {
     private Rectangle currentRect;
     private int startX;
     private int startY;
+
 
     public void clearBoard() {
         rects.clear();
@@ -27,7 +26,6 @@ public class RectanglePanel extends JPanel {
             @Override
             public void mouseDragged(MouseEvent e) {
                 super.mouseDragged(e);
-                super.mouseReleased(e);
                 if(e.getX() > startX) {
                     currentRect.width = e.getX() - currentRect.x;
                 } else {

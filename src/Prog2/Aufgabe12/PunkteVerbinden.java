@@ -2,8 +2,6 @@ package Prog2.Aufgabe12;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class PunkteVerbinden extends JFrame {
     Container c;
@@ -14,7 +12,7 @@ public class PunkteVerbinden extends JFrame {
         z = new RectanglePanel();
         c.add(z, BorderLayout.CENTER);
         JButton button = new JButton("Reset Board");
-        
+
         button.addActionListener(e -> z.clearBoard());
 
         c.add(button, BorderLayout.NORTH);
