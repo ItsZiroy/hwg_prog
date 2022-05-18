@@ -20,7 +20,7 @@ public class Main {
             HashMultimap<String, Student> lastNameMap = HashMultimap.create();
             Map<Integer,Student> idMap = new HashMap<>();
             lines.forEach(line -> {
-                List<String> vars = Splitter.on(';').splitToList(line);
+                List<String> vars = Splitter.on(';').trimResults().splitToList(line);
                 Student student = new Student(Integer.parseInt(vars.get(0)), vars.get(1), vars.get(2));
                 lastNameMap.put(student.nachname(), student);
                 idMap.put(student.matrikelNr(), student);
