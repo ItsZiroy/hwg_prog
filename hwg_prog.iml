@@ -11,5 +11,6 @@
     <orderEntry type="library" name="junit.contrib.theories" level="project" />
     <orderEntry type="library" name="google.guava" level="project" />
     <orderEntry type="library" name="postgresql" level="project" />
+    <orderEntry type="library" name="hibernate.core" level="project" />
   </component>
 </module>
